@@ -53,7 +53,7 @@ async def user_videos():
             updated=None
             
             async with TikTokApi() as api:
-                await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, headless=False)
+                await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, headless=False, browser="webkit")
                 ttuser = api.user(user)
                 try:
                     user_data = await ttuser.info()
